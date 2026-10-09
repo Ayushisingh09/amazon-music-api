@@ -1,3 +1,4 @@
+import { Hono } from 'hono'
 import { App } from './app.js'
 import { AlbumController } from './modules/albums/controllers/album.controller.js'
 import { ArtistController } from './modules/artists/controllers/artist.controller.js'
