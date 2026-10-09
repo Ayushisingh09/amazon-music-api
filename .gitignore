@@ -129,3 +129,5 @@ openapi.yaml
 .vitepress/cache
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.vercel
+.env*

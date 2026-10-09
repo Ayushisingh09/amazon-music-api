@@ -1,3 +1,4 @@
+import { Hono } from 'hono'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { Scalar } from '@scalar/hono-api-reference'
 import { cors } from 'hono/cors'
@@ -134,3 +135,21 @@ export class App {
         return this.app
     }
 }
+
+import { AlbumController } from './modules/albums/controllers/album.controller.js'
+import { ArtistController } from './modules/artists/controllers/artist.controller.js'
+import { CommunityPlaylistController } from './modules/community-playlists/controllers/community-pl.controller.js'
+import { PlaylistController } from './modules/playlists/controllers/playlist.controller.js'
+import { SearchController } from './modules/search/controllers/search.controller.js'
+import { SongController } from './modules/songs/controllers/song.controller.js'
+
+const defaultAppInstance = new App([
+    new SearchController(),
+    new SongController(),
+    new AlbumController(),
+    new ArtistController(),
+    new PlaylistController(),
+    new CommunityPlaylistController()
+]).getApp()
+
+export default defaultAppInstance
